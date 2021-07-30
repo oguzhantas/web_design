@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prompt Kullanımı ile bilgi alma</title>
+
+<script type="text/javascript">
+	
+	function sorular(){
+
+		var sayi1=prompt("Birinci sayıyı giriniz:");
+		var sayi2=prompt("İkinci sayıyı giriniz:");
+
+		if (sayi1!=""  && sayi2!=""){
+			s1 = parseFloat(sayi1);
+			s2 = parseFloat(sayi2);
+			toplam=s1+s2;
+			alert("Toplam sonucu:"+toplam);
+
+		} else{
+			alert("Boş geçmeyiniz");
+		}
+		
+
+
+	}
+
+
+</script>
+
+</head>
+<body>
+
+	<input type="button" name="btnsor" onclick="sorular()" value="Sor Bakalım!">
+
+</body>
+</html>

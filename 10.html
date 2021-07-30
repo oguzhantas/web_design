@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS 10 - Sınav Test </title>
+<script type="text/javascript">
+		function kontrolEt(){
+			if(document.frmTest.s1[1].checked){
+				alert("Tebrikler, cevabınız doğru");
+			} else{
+				alert("Cevabınız yanlış doğru cevap B");
+			}
+		}
+
+
+</script>
+
+</head>
+<body>
+
+	<form name="frmTest" id="frmTest">
+		<p>
+			<b>Soru 1:</b>Türkiye'nin en büyük dağı hangisidir?
+		</p>
+
+<input type="radio" name="s1" id="s1" value="A" onclick="kontrolEt()">A) Erciyes
+<br><input type="radio" name="s1" id="s1" value="B" onclick="kontrolEt()">B) Ağrı
+<br><input type="radio" name="s1" id="s1" value="C" onclick="kontrolEt()">C) Panadöken
+<br><input type="radio" name="s1" id="s1" value="D" onclick="kontrolEt()">D) Harput
+
+	</form>
+
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-color: khaki; 
+        }
+        .container{
+            margin:auto;
+            width: 50%;
+            text-align: center;
+           
+        }
+        #baslik{font-size:25px; 
+                font-family: verdana;
+                font-weight: bold;}
+        .btn{
+            width: 150px;
+            height:150px;
+            float:left;
+            margin:10px;
+            color: #FFF;
+            font-size:120pt;
+            text-align: center;
+            padding:40px;
+        }
+        #temizle{clear:both}
+        #btn1{ background-color: chocolate; }
+        #btn2{ background-color: darkblue; }
+        #btn3{ background-color:maroon; }
+        #bilgi{
+                font-family: Tahoma;
+                font-size:20px;
+                margin-top:20px;
+                margin-left: 10px;
+                padding:10px;
+                width: 710px;
+                height:30px;
+            }
+        .dogru{color:greenyellow; background-color:green;}
+        .yanlis{color:#FFF; background-color:rgb(172, 9, 9)};
+       
+    </style>
+</head>
+<body>
+ <div class="container">
+<p id="baslik">Dikkat Oyunu</p>
+
+
+
+<div id="btn1" class="btn" onclick="kontrol(this.id)">!</div>
+
+<div id="btn2" class="btn" onclick="kontrol(this.id)">!</div>
+
+<div id="btn3" class="btn" onclick="kontrol(this.id)">!</div>
+
+<div id="temizle"></div>
+<div id="bilgi" class="dogru"></div>
+<!-- <button  onclick="clearInterval(degisken)">Durdur</button><br> -->
+
+<script>
+var puan=0;
+var degisken = setInterval(calistir,1000); //0.6
+//0.6 saniyede bir zamanGoster fonksiyonu çağrılır.
+
+function calistir(){
+
+    for(i=1;i<=3;i++){
+            document.getElementById("btn"+i).innerText="";
+    }
+    //Belirtilen aralıkta rastgele sayı üretir
+    alt=1;
+    ust=3;
+    aralik=ust-alt+1;
+    deger= Math.floor(Math.random()*(aralik))+alt;
+    document.getElementById("btn"+deger).innerText="*";
+
+}
+
+function kontrol(tiklanan_id){
+
+    document.getElementById("bilgi").innerHTML ="";
+    
+    if (document.getElementById(tiklanan_id).innerText=="*"){
+        puan+=10;
+        element = document.getElementById("bilgi");
+        element.classList.remove("yanlis");
+        element.classList.add("dogru");
+        document.getElementById("bilgi").innerHTML ="Tebrikler, puan:"+puan; 
+    } else{
+        puan-=5;
+        element = document.getElementById("bilgi");
+        element.classList.remove("dogru");
+        element.classList.add("yanlis");
+        document.getElementById("bilgi").innerHTML ="Üzgünüm, puan:"+puan;
+       
+    }
+
+    if(puan>=100){
+            alert('Tebrikler 100 puan kazandınız');
+        }
+}
+
+
+
+
+</script>
+</div>
+</body>
+</html>

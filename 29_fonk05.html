@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Argümanları eksik girilirse undefined olur.</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	//ES6 
+	//eğer bir fonksiyona tanımından fazla parametre gönderirseniz 
+	// hata vermez, undefined(tanımlanmamış) mesajı verir
+	
+	function cikar(x,y){
+		if(y===undefined) 
+			return -x;
+		else
+			return(x-y);
+	}
+
+	console.log(cikar(5));
+	console.log(cikar(11-5));
+	console.log(cikar(11,5));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarih</title>
+</head>
+<body>
+    <!--  Sırası
+        year, month, day, hour, minute, second, and millisecond
+
+        veya
+        year, month, day, hour, minute, second
+
+        veya
+        year, month, day, hour, and minute
+
+        veya
+        year, month, day, and hour:
+
+        veya
+        year, month, and day
+
+        veya
+        year and month
+
+        veya
+        sadece year
+    -->
+
+    <h3>Tarih 1:</h3>
+    <p id="sonuc"></p>
+
+    <h3>Tarih 2:</h3>
+    <p id="sonuc2"></p>
+
+    <h3>ISO formatında Tarih 3:</h3>
+    <p id="sonuc3"></p>
+
+    <h3>UTC String formatında Tarih 5:</h3>
+    <p id="sonuc4"></p>
+<script>
+        var t1 = new Date(2021, 03, 13, 17, 13, 20, 0);
+        document.getElementById("sonuc").innerHTML = t1;
+
+        var t2 = new Date("April 13, 2021 17:13:00");
+        document.getElementById("sonuc2").innerHTML = t2;
+
+        var t3 = new Date();
+        document.getElementById("sonuc3").innerHTML = t3.toISOString();
+
+        var t4 = new Date();
+        document.getElementById("sonuc4").innerHTML = t4.toUTCString();
+
+</script>
+</body>
+</html>

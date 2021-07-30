@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For each</title>
+</head>
+<body>
+    <p>Burada dizinin her elemanı için fonksiyon çağrılmaktadır.</p>
+
+    <p id="sonuc"></p>
+    
+    <script>
+        var metin = "";
+        var sayilar = [55, 24, 6, 16, 25];
+        sayilar.forEach(fonksiyon);
+        document.getElementById("sonuc").innerHTML = metin;
+
+        function fonksiyon(value, index, array) {
+            metin = metin + value + "<br>";
+        }
+   
+    </script>
+    
+</body>
+</html>

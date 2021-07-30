@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Varsayılan değer alan fonksiyon</title>
+</head>
+<body>
+<script type="text/javascript">
+		//varsayılan değer atama
+		const ustAl = function(taban,us=3){
+		
+		let sonuc=1;
+		for(let i=1; i<=us; i++){
+			sonuc*=taban;
+		}
+		return sonuc;
+	}
+	
+console.log(ustAl(2)); //tek parametre ile çağırma, 2 üzeri 3 hesaplanacak
+console.log(ustAl(2,4)); // 2 üzeri 4 hesaplanacak
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>explode demo</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <style>
+  #kutu {
+    width: 200px;
+    height: 200px;
+    background:crimson;
+  }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+ 
+<p>Kutuya tıklayınız, 1 sn. sonra tekrar tıklayınız.</p>
+<div id="kutu"></div>
+ 
+<script>
+$( document ).click(function() {
+  $( "#kutu" ).toggle( "explode" );
+});
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarih</title>
+</head>
+<body>
+
+<!-- 
+    setTimeOut fonksiyonu belirtilen milisaniye sonra bir fonksiyonun
+    tetiklenmesi sağlar
+
+-->
+
+    <p id="sonuc"></p>
+    <button onclick="setTimeout(goster, 2000)">Başla</button>
+    <button onclick="temizle()">Temizle</button>
+    <script>
+
+      
+
+   
+        function temizle(){
+             clearTimeout(zaman); 
+        }
+        
+        function goster(){
+            var zaman = new Date();
+            saat = zaman.getHours();
+            dakika=zaman.getMinutes();
+            saniye=zaman.getSeconds();
+       
+            document.getElementById("sonuc").innerHTML = saat+':'+dakika+':'+saniye;
+
+        }
+
+    </script>
+    
+</body>
+</html>

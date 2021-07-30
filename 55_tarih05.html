@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.yanSon { /*Yanıp sönen yazı için*/
+  animation: yanipSondur 1s linear infinite;
+}
+
+@keyframes yanipSondur {
+  50% { opacity: 0;  }
+}
+
+</style>
+
+  </head>
+
+
+<body>
+
+<p id="bilgi" class="yanSon">Sınav başlıyor...</p>
+<button onclick="setTimeout(calistir, 1000*60*40)">Çalış</button>
+
+<script>
+function calistir() {
+
+  document.getElementById("bilgi").innerHTML="Sınav Bitti.";
+  //Örneğin 40 dakika için 40*60*1000
+
+}
+</script>
+
+ 
+</body>
+</html>

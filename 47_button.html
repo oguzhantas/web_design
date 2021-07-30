@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        .normal{
+            font-size: 15pt;
+            color:#D20000;
+        }
+
+        .buyuk{
+            font-size: 25pt;
+            color:blueviolet;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <p id="metin" class="normal">Merhaba İstanbul, bugün gülüyorsun.</p>
+
+
+    <img src="images/manzara.jpg" id="resim1" width="500" onmousemove="uzerineGelince()" 
+    onmouseout="uzerindenGidince()"><br>
+
+
+    <script>
+            function calistir(){
+                alert('Çalıştım');
+            }
+
+            function uzerineGelince(){
+               //  Yazı büyüyecek
+                var element = document.getElementById("metin");
+                element.classList.remove("normal");
+                element.classList.add("buyuk");
+            }
+
+            function uzerindenGidince(){
+            // Yazı Küçülecek
+                var element = document.getElementById("metin");
+                element.classList.remove("buyuk");
+                element.classList.add("normal");   
+            }
+
+    </script>    
+</body>
+</html>

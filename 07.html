@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>07 döngüler</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		
+		function sec(){
+
+			if(document.formCV.cinsiyet[0].checked)
+				alert("Erkek seçildi");
+
+			if(document.formCV.cinsiyet[1].checked)
+				alert("Kadın seçildi");
+				
+		}
+
+		function kontrol(){
+			adi= document.getElementById("ad").value;	
+			soyadi= document.getElementById("soyad").value;	
+			mesaj= document.getElementById("mesaj").value;	
+
+			//alert("Girilen ad:"+adi);
+			//alert("Girilen soyad:"+soyadi);
+			//alert("Girilen mesaj:"+mesaj.trim());
+
+			var hataMesaj="";
+			
+			if(adi.trim()=="")
+				hataMesaj+="Adı";
+
+			if(soyadi.trim()==""){
+				if (hataMesaj=="")
+					hataMesaj+="Soyadı";	
+				else
+					hataMesaj+=", Soyadı";
+
+			}
+
+			if(mesaj.trim() ==""){
+				if (hataMesaj=="")
+					hataMesaj+="Mesaj";	
+				else
+					hataMesaj+=", Mesaj";
+			}
+
+			alert("Lütfen "+hataMesaj+" alanlarını doldurunuz.");
+
+
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<form name="formCV">
+		<table border="1" align="center">
+			<tr>
+				<td>Adı</td>
+				<td><input type="text" name="ad" id="ad"></td>
+			</tr>
+			<tr>
+				<td>Soyadı</td>
+				<td><input type="text" name="soyad" id="soyad"></td>
+			</tr>
+
+			<tr>
+				<td>Cinsiyet</td>
+				<td> 
+					<input type="radio" name="cinsiyet" id="cinsiyet" value="Erkek" onclick="sec()">Erkek
+					<input type="radio" name="cinsiyet" id="cinsiyet" value="Kadın" onclick="sec()">Kadın
+
+				</td>
+			</tr>
+			<tr>
+				<td>Mesajınız:</td>
+				<td>
+					<textarea cols="30" rows="5" id="mesaj">
+						
+					</textarea>
+				</td>
+
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="button" onclick="kontrol()" value="Kaydet">
+				</td>
+			</tr>
+
+		</table>
+	</form>
+
+</body>
+</html>

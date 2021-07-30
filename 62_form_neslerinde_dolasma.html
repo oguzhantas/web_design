@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Film Bilgi Formu</h2>
+    <form method="POST" id="frmFilm" onsubmit="return calis()">
+       
+               
+        <label for="film">Film Adı</label>
+        <input type="text" id="film" name="film"><br>
+    
+        <label for="sure">Süre</label>
+        <input type="number" id="sure" name="sure"><br>
+
+        <label for="tarih">Gösterim Tarihi</label>
+        <input type="date" id="tarih" name="tarih"><br>
+
+        <label for="tur">E-posta</label>
+        <input type="email" id="eposta" name="eposta"><br>
+                
+        <label for="sifre">Şifre</label>
+        <input type="password" id="sifre" name="sifre"><br>
+        
+        <label for="yerli">Yerli/Yabancı</label>
+        <input type="radio" id="yerli" name="yy">Yerli
+        <input type="radio" id="yabanci" name="yy">Yabancı<br>
+        
+        <label for="ozellik">Özellikler</label>
+        <input type="checkbox" id="arti18" name="arti18">+18
+        <input type="checkbox" id="arti7" name="arti7">+7 <br>
+        
+
+
+        <label for="kategori">Kategori</label>
+        <select name="kategori" id="kategori">
+                        <option value="0">Seçiniz</option>
+                       <option value="Korku">Korku</option> 
+                       <option value="Macera">Macera</option> 
+                       
+        </select><br>
+
+        <label for="resim">Resim Yükle</label>
+        <input type="file" class="form-control" id="resim"><br>
+
+
+        <textarea name="aciklama" id="aciklama" cols="30" rows="6">
+        </textarea><br>
+
+                <input type="submit" id="submit" value="Formu Kaydet">
+    </form>
+ 
+
+<script>
+    function calis(){
+    
+    x = document.getElementById("frmFilm");
+    elemansayisi=parseInt(x.length);            
+    alert("Formda "+elemansayisi+" tane element(nesne) var");
+
+    for(i=0;i<elemansayisi;i++){
+          
+          //aşağıda nesnenin tipini ekrana mesaj olarak yazdırıyoruz
+          alert("Nesne Tipi:"+x.elements[i].type); 
+          bilgi=x.elements[i].value; //nesnenin değerini alıyoruz
+          if (bilgi==""){ //içinde bilgi var mı bakıyoruz.
+              //alert("Boş alanı doldurunuz");
+          }    
+    }
+    }
+    
+</script>
+</body>
+</html>

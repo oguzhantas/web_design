@@ -1,0 +1,20 @@
+<html>
+<script>
+    //JSON dizisi
+     const  maaslar=[
+         {id:1, adi:"Erhan", maas:4000},
+         {id:2, adi:"Oğuzhan",maas:6000},
+         {id:3, adi:"Şeyda", maas:5500},
+   ];
+
+   const besuzeri = maaslar.filter( bilgiAl => bilgiAl.maas>5000);
+  // console.log(besuzeri);
+   document.write(besuzeri[0].adi);
+   document.write(besuzeri[0].maas);
+   
+   document.write(besuzeri[1].adi);
+   document.write(besuzeri[1].maas);
+</script>
+
+
+</html>

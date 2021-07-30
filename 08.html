@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sayfa rengini değiştirme</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		
+		function ekranBoyut(){
+			genislik= screen.width;
+			yukseklik=screen.height;
+			alert("Ekran "+genislik+"x"+yukseklik);
+
+		}
+
+		function zeminDegistir(renk){
+			document.body.style.background=renk;
+			document.body.style.color="#FFF";
+			document.body.style.fontSize=50;
+		}
+
+	</script>
+</head>
+
+<body onload="ekranBoyut()">
+
+	<h3>Body onload olayı</h3>
+	
+	<input type="button" name="btnkirmizi" value="Kırmızı" 
+	onclick="zeminDegistir('red');">
+
+	<input type="button" name="btnmavi" value="Mavi" 
+	onclick="zeminDegistir('blue');">
+	
+	<input type="button" name="btnyesil" value="Yeşil" 
+	onclick="zeminDegistir('green');">
+
+
+
+</body>
+</html>

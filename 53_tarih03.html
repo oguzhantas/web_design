@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarih</title>
+</head>
+<body>
+
+    <p id="sonuc"></p>
+    <p id="sonuc2"></p>
+    <p id="sonuc3"></p>
+    <p id="sonuc4"></p>
+    <p id="sonuc5"></p>
+    <p id="sonuc6"></p>
+    
+    <script>
+
+        // 1 Ocak 1970 den bu yana geçen milisaniye 
+        var t = new Date();
+        document.getElementById("sonuc").innerHTML = t.getTime();
+
+        var yil = new Date();
+         document.getElementById("sonuc2").innerHTML = yil.getFullYear();
+
+        var ay = new Date();
+        document.getElementById("sonuc3").innerHTML = ay.getMonth();
+
+        var gun = new Date();
+        document.getElementById("sonuc4").innerHTML = gun.getDate();
+
+        var saat = new Date();
+        document.getElementById("sonuc5").innerHTML = saat.getHours();
+
+        var dakika = new Date();
+        document.getElementById("sonuc6").innerHTML = dakika.getMinutes();
+
+
+
+    </script>
+</body>
+</html>

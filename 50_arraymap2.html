@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>JavaScript Dizi eşleştirme(Array Map)</h2>
+    <p>Herbir dizi elemanı için fonksiyon çağırarak yeni dizi oluşturma.</p>
+
+<p id="sonuc"></p>
+
+    <script>
+        var sayilar1 = [15, 14, 13, 12, 11];
+        var sayilar2 = sayilar1.map(fonksiyon);
+        document.getElementById("sonuc").innerHTML = sayilar2;
+
+        function fonksiyon(value) {
+            return value * 3;
+        }
+       
+    </script>
+</body>
+</html>

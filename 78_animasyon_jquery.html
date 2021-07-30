@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Animasyon Olayı</title>
+    <style>
+      #alan{
+          width: 500px;
+          height:800px;
+          position: relative;
+          margin:0 auto;
+          background-color: #EEE;
+      }
+
+        #kutu{
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+            text-align: center;
+            color:#FFF;
+            padding:75px;
+            font-size:40px;
+             display: block;
+            position: relative;
+            float:left;
+            
+        }
+
+        .buton{
+            width: 150px;
+            height: 20px;
+            padding: 10px;
+            text-align: center;
+            background-color: darkblue;
+            color:#FFF;
+            display: block;
+            position: relative;
+            float:left;
+            border:1px solid gray;
+            font-family: arial;
+            margin:3px;
+        }
+        .buton:hover{
+          background-color: gray;
+           border:1px solid darkblue;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="alan">
+    <div id="bizimButton1" class="buton"> Yok Et</div>
+    <div id="bizimButton2" class="buton"> Göster</div>
+    <div id="bizimButton3" class="buton"> Kayarak Yok Et</div>
+    <div id="bizimButton4" class="buton"> Kayarak Göster</div>
+    <div id="bizimButton5" class="buton"> %50 Silik </div>
+    <div id="bizimButton6" class="buton"> Toggle </div>
+  
+
+    <div id="kutu"> Bizim kutu </div> 
+</div>
+
+
+<script type="text/javascript">
+  
+$(document).ready(function(){
+
+  $("#bizimButton1").click(function(){
+    alert('Fade Out ile kutumuz yok olacak');
+    $('#kutu').fadeOut(1000);
+  });
+
+  $("#bizimButton2").click(function(){
+    alert('Fade in ile kutumuz gösterilecek');
+    $('#kutu').fadeIn(1000);
+  });
+
+  $("#bizimButton3").click(function(){
+    alert('Slide Up ile kutumuz kayarak yok olacak');
+    $('#kutu').slideUp();
+  });
+
+  $("#bizimButton4").click(function(){
+    alert('Slide Down ile kutumuz kayarak gösterilecek');
+    $('#kutu').slideDown();
+  });
+
+  $("#bizimButton5").click(function(){
+    alert('Fade to ile %50 oranında flu hale gelecek');
+    $('#kutu').fadeTo("slow",0.5);
+  });
+
+  $("#bizimButton6").click(function(){
+    alert('Fade to Toggle işlemi, tuşa bir defa basıp 1 sn bekleyip, sonra tekrar basınız');
+    $('#kutu').fadeToggle("slow","linear");
+  });
+
+
+
+
+});
+
+
+
+
+
+           
+ 
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text çoğaltma</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		
+		function sec(){
+				secilen=document.getElementById("cocuksecID").value;
+				//alert("seçilen"+secilen);
+				document.body.innerHTML = '';
+				selectOlustur();
+				textOlustur(secilen);
+				document.write('<input type="submit"  value="Kaydet">');
+
+		}
+
+
+		function textOlustur(n){
+
+			document.write("<table>");
+			for(i=1;i<=n;i++)
+			{
+				document.write("<tr>");
+				document.write("<td>"+i+". Çocuk Adı Soyadı</td>");
+				document.write('<td> <input type="text" name="c'+i+'" id="c'+i+'"> </td>');
+				document.write("<tr>");
+			}
+
+			document.write("</table>");
+
+		}
+
+
+		function selectOlustur(){
+			with(document){
+			//Dinamik select seçim nesnesi 
+				write("Çocuk Sayısı:");
+				write('<select id="cocuksecID" onchange="sec()">');
+				for(k=1;k<=30;k++){
+					write('<option value="'+k+'">'+k+'</option>');
+				}
+			write('</select>'+"<br>");
+			}
+		}
+		
+
+	</script>
+</head>
+<body onload="selectOlustur()">
+
+	
+
+	<!-- <form name="metinform">
+		<input type="hidden" name="cocuksay" id="cocuksay">
+		<table>
+			<tr>
+				<td>1</td>
+				<td><input type="text" name="c1" id="c1"><br></td>
+			</tr>
+
+			<tr>
+				<td>2</td>
+				<td><input type="text" name="c2" id="c2"><br></td>
+			</tr>
+
+		</table>
+	</form>
+-->
+
+</body>
+</html>

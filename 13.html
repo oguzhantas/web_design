@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Döngü Kullanımı</title>
+
+<script type="text/javascript">
+		
+		function n_toplamcift(){
+			var ndeger=prompt("n sayısını giriniz:");
+			
+			if (n!=""){
+				var n=parseInt(ndeger);
+				toplam=0;
+				for(i=0;i<=n; i+=2){
+					toplam+=i;
+				}
+				alert("2+4+6+ ...+n toplamı:"+toplam);
+			}	
+		}
+
+
+
+		function n_toplam(){
+		var ndeger=prompt("n sayısını giriniz:");
+		if (n!=""){
+			var n=parseInt(ndeger);
+			toplam=0;
+			for(i=1;i<=n;i++)
+			{
+				toplam+=i;		
+			}	
+
+			alert("Toplam sonucu:"+toplam);
+
+		} else{
+			alert("Boş geçmeyiniz");
+		}
+		
+
+
+	}
+
+
+</script>
+
+</head>
+<body>
+
+	<input type="button" name="btnsor" onclick="n_toplam()" value="1+2+3+...+n">
+	<input type="button" name="btnsor2" onclick="n_toplamcift()" value="2+4+6+...+n">
+
+
+</body>
+</html>

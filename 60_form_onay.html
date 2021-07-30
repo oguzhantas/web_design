@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onay </title>
+</head>
+<body>
+
+    <form method="POST" name="kayitForm" action="kaydet.php" onsubmit="return uyar()">
+
+        Adı :<input type="text"><br>
+
+        <input type="checkbox" name="onay" id="ckOnay">Satış sözleşmesini kabul ediyorum <br>
+
+        <input type="submit" value="Devam Et" >
+        <input type="button" value="İptal Et" onclick="window.location='index.php'"> 
+        
+    </form>
+    
+    <script>
+        function uyar()
+        {
+            var checkBox = document.getElementById("ckOnay");
+     
+            if (checkBox.checked==false )
+            {
+                alert("Lütfen satış sözleşmesini onaylayınız");
+                return false; /*Unutmayınız*/
+            } else{
+                alert('Yönlendiriliyor...');
+                window.location.href = "index.html";
+               // return true;
+            }
+        }
+    </script>
+</body>
+</html>

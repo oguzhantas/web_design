@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sınırsız Paremetre alan fonksiyonlar</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+	
+	function topla(...sayilar) {
+  		let sonuc = 0;
+  		for (let sayi of sayilar) 
+  			sonuc+=sayi;
+  		return sonuc;
+	}
+
+	let toplamSonuc = topla(11, 21, 2, 4, 5, 1, 9, 10,10,15);
+	console.log(toplamSonuc);
+	document.write(toplamSonuc);
+</script>
+
+</body>
+</html>

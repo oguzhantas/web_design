@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> JS  MouseDown olayları</title>
+    <meta charset="utf-8">
+</head>
+
+<script type="text/javascript">
+    function semsiyeAc(){
+        document.getElementById('semsiye').src="images/semsiye_acik.jpg";
+    }
+
+function semsiyeKapat(){
+        document.getElementById('semsiye').src="images/semsiye_kapali.jpg";
+    }
+
+function fareDown(){
+   alert('fare down');
+}
+
+function fareUp(){
+    alert('fare up');
+}
+
+function fareMove(){
+    alert('fare move');
+}
+</script>    
+
+<body>
+
+<h1>JavaScript MouseDown ve MouseUp Olayları</h1>
+    <!--  Mouse over olayında fare nesne üzerine getirilince tetiklenir
+          Mouse out olayında da fare nesne üzerinden çekilince çalışır  
+    -->
+    <img id="semsiye" src="images/semsiye_kapali.jpg" onmouseout="semsiyeKapat()"
+     onmouseover="semsiyeAc()">
+
+     <img src="images/manzara.jpg" alt="" onmousedown="fareDown()" >
+     <img src="images/manzara.jpg" alt="" onmouseup="fareUp()">
+
+
+
+
+</body>
+</html>

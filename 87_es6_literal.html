@@ -1,0 +1,20 @@
+<html>
+
+<script>
+    const cicekler = ["gül","lale","karanfil","manolya"];
+    /*const liste= cicekler.map(function(cicek){
+            return '<li>'+cicek+'</li>';
+    })*/
+  
+    //Yukarıdaki kodun arrow fonksiyonları ile kısaltılmış hali
+    //const liste= cicekler.map(cicek =>'<li>'+cicek+'</li>');
+
+    //Daha sade hali, ES6 da template literal kullanımı 
+    // Aşağıdaki işaret tırnak değil, ALTGR + , ile çıkıyor
+     const liste= cicekler.map(cicek =>`<li>${cicek}</li>`);
+
+   // console.log(liste);
+    liste.forEach( eleman=>document.write(eleman));
+
+</script>
+</html>

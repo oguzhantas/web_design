@@ -1,0 +1,68 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Gelir-Gider Dinamik Hesapla</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		
+		function hesapla(){
+			alert('hesaplıyorum');
+			var gelirToplam=0, giderToplam=0;
+			var gelirDeger=0, giderDeger=0;
+
+			for(i=1;i<=10;i++){
+				gelirDeger=document.getElementById('gelir'+i).value;
+			    giderDeger=document.getElementById('gider'+i).value;
+			
+				if(gelirDeger.length!==0){
+					gelirToplam+= parseFloat(gelirDeger);
+				}
+				
+					if(giderDeger.length!==0){
+					giderToplam+= parseFloat(giderDeger);
+				}
+
+			}//Döngü bitişi
+	
+			fark = gelirToplam - giderToplam;
+
+			alert("Gelir Değer:"+gelirToplam+ " TL"+
+				"\n Gider Toplam:"+giderToplam+" TL"+ 
+				"\n Fark:"+fark+ " TL");
+			
+		}
+
+
+		function textOlustur(n){
+			document.write("<table>");
+			document.write("<tr>");
+			document.write("<td></td>");
+			document.write("<td>Gelir</td>");
+			document.write("<td>Gider</td>");
+			document.write("</tr>");
+			
+			for(i=1;i<=n;i++)
+			{
+				document.write("<tr>");
+				document.write("<td>"+i+"</td>");
+				document.write('<td> <input type="text" name="gelir'+i+'" id="gelir'+i+'"> </td>');
+				document.write('<td> <input type="text" name="gider'+i+'" id="gider'+i+'"> </td>');
+				
+				document.write("<tr>");
+			}
+
+			document.write("</table>");
+			document.write('<input type="button" value="hesapla" onclick="hesapla()">');
+
+		}
+
+
+	</script>
+</head>
+
+<body onload="textOlustur(10)">
+
+
+
+</body>
+</html>

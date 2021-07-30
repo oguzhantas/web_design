@@ -1,0 +1,16 @@
+<html>
+
+    <script>
+    const  isler=[
+            {id:1, aktifMi:true},
+            {id:2, aktifMi:false},
+            {id:3, aktifMi:true},
+      ];
+
+    //const aktivIsler= isler.filter( function(is){return is.aktifMi;})
+    const aktivIsler= isler.filter( isdurum => isdurum.aktifMi)
+    console.log(aktivIsler);
+      document.write(aktivIsler[0].aktifMi);
+    </script>
+
+</html>

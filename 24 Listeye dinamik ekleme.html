@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="yemekListesi">
+  <li>Karnıyarık</li>
+  <li>İmam bayıldı</li>
+</ul>
+
+<p>Listenin sonuna eklemek için tıklayınız.</p>
+
+<button onclick="yeniEkle()">Hemen Ekle</button>
+
+<script>
+function yeniEkle() {
+  var eleman= document.createElement("LI");
+  var metin = document.createTextNode("Hasanpaşa Köfte");
+  eleman.appendChild(metin);
+  document.getElementById("yemekListesi").appendChild(eleman);
+}
+</script>
+
+</body>
+</html>

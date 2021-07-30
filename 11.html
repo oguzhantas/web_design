@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>11 JS Metro </title>
+
+<script type="text/javascript">
+	
+	function sorbakalim(){
+		var cevap = confirm("Askerliğinizi yaptınız mı?");
+		
+		if (cevap){
+			alert("İşe girebilirsiniz");
+		} else{
+			alert("En az 2 yıl tecilliyse girebilirsiniz");
+		}
+
+	}
+
+</script>
+
+	<style type="text/css">
+		
+		.kutu{
+			width:20%;
+			height:200px;
+			float:left;
+			margin:7px; 
+			background-color: maroon;
+			font-size:25px;
+			text-align: center;
+			color:#FFF;
+			padding: 15px;
+		}
+
+		.bordo{
+			background-color: #d20000;
+		}
+		.mavi{
+			background-color: #00B9FF;
+		}
+
+
+
+@media (max-width:1920px) and (min-width:1000px) {
+	.kutu{
+		width: 20%;
+	}
+}​
+
+@media (max-width:400px) and (min-width:600px) {
+	.kutu{
+		width: 100%;
+	}
+}​
+
+
+	</style>
+</head>
+<body>
+
+	<div class="kutu bordo" onclick="sorbakalim()">
+		Soru 1
+	</div>
+	<div class="kutu mavi" onclick="sorbakalim()">
+		Soru 2
+	</div>
+
+</body>
+</html>

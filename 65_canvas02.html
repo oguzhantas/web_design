@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Kullanılan resim:</p>
+<img id="resim1" width="960" height="600" src="images/manzara.jpg" alt="Manzara">
+
+<p>Yeni çizilen Tuval(Canvas):</p>
+<canvas id="testCanvas" width="980" height="620" style="border:1px solid #d3d3d3;">
+    Tarayıcınız canvas tag'i desteklemiyor.
+</canvas>
+
+<script>
+window.onload = function() {
+  var c = document.getElementById("testCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("resim1");
+  ctx.drawImage(img, 10, 10);
+}
+</script>
+
+</body>
+</html>

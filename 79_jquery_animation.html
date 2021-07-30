@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script
+type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<style>
+
+    #kutu{
+        width: 100px;
+        height:100px;
+        background-color: blueviolet;
+        margin:0 auto;
+        text-align: center;
+        color:#FFF;
+        font-size: 50px;
+        font-family: "Tahoma";
+        font-weight: bold;
+        padding:60px;
+    }
+</style>
+<script> 
+$(document).ready(function(){
+   
+
+
+$("button").click(function(){
+    var n = 10;
+var sonuc = setInterval(function(){
+  if(n <= 0){
+        clearInterval(sonuc);
+        //$("#kutu").html("Tamam");
+        alert('Süre bitti');
+  } else {
+         $("#kutu").html(n);
+         $("#kutu").animate({
+            opacity: '0.3',
+            height: '200px',
+            width: '200px',
+            fontSize:'100px'
+    },500);
+         $("#kutu").animate({
+            opacity: '1',
+            height: '100px',
+            width: '100px',
+            fontSize:'50px'
+         },500);
+  }
+  n -= 1;
+}, 1000);
+  });
+
+ 
+});
+</script> 
+</head>
+<body>
+
+<button>Başla</button>
+
+
+<div id="kutu">10</div>
+
+</body>
+</html>

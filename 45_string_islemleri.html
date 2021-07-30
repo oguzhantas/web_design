@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String işlemleri</title>
+    <script>
+        var metin = "Nasılsın İstanbul?";
+        var uzunluk = metin.length; //uzunluk döndürür
+
+        //Aranılan metnin ilk sırası(indeksi)
+        var str = "İstanbulda hava karlı mı acaba!";
+        var pozisyon = str.indexOf("tan");    // 2 döner   
+        document.write("Indexof :"+str+" "+pozisyon+"<br>");
+
+        //Ya Bulamazsa -1 döndürür.
+         str = "İstanbulda hava karlı mı acaba!";
+        var pozisyon = str.indexOf("oğuzhan"); // -1       
+        document.write(str+" "+pozisyon+"<br>");
+
+        //Aranılan metinin son indeksi
+         str = "İstanbulda tan yeri ağarıyor";
+        var pozisyon = str.lastIndexOf("tan"); //11
+        document.write("Son geçen:"+str+" "+pozisyon+"<br>");
+
+        //belli bir haneden sonra bakmasını isteyebiliriz.
+         str = "İstanbulda tan yeri ağarıyor";
+        var pozisyon = str.indexOf("tan", 8); //11
+        document.write("8 den sonra "+str+" "+pozisyon+"<br>");
+
+        //Sondan başa doğru arar
+         str = "İstanbulda tan yeri ağarıyor";
+        var pozisyon = str.lastIndexOf("tan", 8); //2
+        document.write("Sondan 8 "+str+" "+pozisyon+"<br>");
+
+        //String arama
+         str = "İstanbulda tan yeri ağarıyor";
+        var pozisyon = str.search("tan"); //2
+        document.write("String arama "+str+" "+pozisyon+"<br>");
+
+        //Dilimleyip alma
+         str = "Bal, Kaymak, Pekmez";
+        var alinan = str.slice(4, 11); // kaymak
+        document.write("Dilimleyip alma Alınan:"+alinan+"<br>");
+
+        //Dilimleyip alma eksi değerlende sondan başlanarak sayılır
+         str = "Bal, Kaymak, Pekmez";
+        var alinan = str.slice(-15, -8); //Kaymak
+        document.write("Eksi Slice Alınan:"+alinan+"<br>");
+
+         str = "Bal, Kaymak, Pekmez";
+        var sonuc = str.slice(5); //Kaymak, Pekmez
+        document.write(sonuc+"<br>");
+
+        //sondan -14 den itibaren
+         str = "Bal, Kaymak, Pekmez";
+         sonuc = str.slice(-14); //Kaymak, Pekmez
+        document.write(sonuc+"<br>");
+
+        //Belli kısmı alma slice ile aynı
+         str = "Çanta, Kalem, Defter";
+         sonuc = str.substring(7, 12); //Kalem
+        document.write("Substring(7,12) "+sonuc+"<br>");
+
+         //substr
+          str = "Çanta, Kalem, Defter";
+         sonuc = str.substr(7); //Kalem, defter
+        document.write("substr(7) "+sonuc+"<br>");
+
+        //substr eksi parametre
+         str = "Çanta, Kalem, Defter";
+         sonuc = str.substr(-6); // Defter
+        document.write(sonuc+"<br>");
+
+        //Bulup, Yer değiştirme
+        str = "Bugün hava çok güzel";
+         sonuc = str.replace("hava", "deniz"); //hava ile deniz yer değiştirir
+        document.write("Replace sonucu:"+sonuc+"<br>");
+
+        //Aşağıdaki gibi aranan ifadeyi Büyük harfle yazarsak çalışmaz 
+        str = "Bugün hava çok güzel";
+         sonuc = str.replace("HAVA", "deniz");
+        document.write(sonuc+"<br>");
+
+         //Aşağıdaki gibi  /i kullanmalıyız düzenli ifadeler
+         str = "Bugün hava çok güzel";
+         sonuc = str.replace("/HAVA/i", "deniz");
+        document.write("Hava değişimi :"+sonuc+"<br>");
+
+        //tümünü değiştirmek için /g
+        str = "Bugün hava çok güzel";
+         sonuc = str.replace("/HAVA/g", "deniz");
+        document.write(sonuc+"<br>");
+
+
+        str="İstinye Üniversitesi";
+        kucuk= str.toLowerCase(); //küçük harfe çevir
+        document.write(kucuk+"<br>");
+     
+        str="meslek yüksek okulu";
+        buyuk=str.toUpperCase();//büyük harfe çevir
+        document.write(buyuk+"<br>");
+
+        //trim boşlukları atar
+        str="   Bilgisayar programcılığı  ";
+        document.write(str.trim());
+
+
+        //toplam 5 karakter olmak üzere başına kalan sayıda 0 ekler
+        str = "15";
+        str = str.padStart(5,0);
+        document.write(str+"<br>");
+
+        //toplam 5 karakter olmak üzere sonuna kalan sayıda 0 ekler
+         str = "15";
+        str = str.padEnd(5,0);
+        document.write(str+"<br>");
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

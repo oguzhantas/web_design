@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS 04</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		
+		var x=5;
+		var y=6;
+		/*
+		if (x==y)
+			alert("x eşittir y");
+		else
+			alert("x ve y birbirinden farklı");
+		*/
+
+		if (x!=y)
+			document.write("x eşit değildir y");
+		else
+			document.write("x eşittir y");
+
+
+		var vize=50, odev1=60, odev2=100, odev3=70, proje=70, final=100;
+		var odevort=(odev1+odev2+odev3)/3;
+		var ortalama= vize*0.2 + odevort*0.2 +proje*0.3+final*0.3;
+
+		ortalama= Math.round(ortalama);	
+		document.write("Ortalamanız:"+ortalama);
+		console.log("Konsola yazılan Ortalama:"+ortalama);
+
+		if (ortalama>=0 && ortalama<50)
+			document.write("F");
+		
+		else if(ortalama>=50 && ortalama<60)
+			document.write("C");
+		
+		else if(ortalama>=60 && ortalama<80)
+			document.write("B");
+		
+		else if(ortalama>=80 && ortalama<=100)
+			document.write("A");
+		
+
+		
+
+
+	</script>
+</head>
+<body>
+
+
+
+
+</body>
+</html>

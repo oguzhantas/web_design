@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For döngüsü ile tablo</title>
+	<meta charset="utf-8">
+<script type="text/javascript">
+	
+	document.write('<table border="1">');
+
+	for(i=1;i<=2;i++){ //satır sayısı
+		document.write("<tr>");
+		for(j=1;j<=4;j++){ //sütün sayısı
+
+			document.write("<td>");
+			
+			for(k=1;k<=10;k++){
+				if(i==1)
+					document.write((j+1)+"x"+k+"="+((j+1)*k) +"<br>");
+				else if(i==2)
+					document.write((j+5)+"x"+k+"="+((j+5)*k) +"<br>");
+			}
+
+			document.write("</td>");
+		}
+		document.write("</tr>");
+	}
+
+	document.write('</table>');
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

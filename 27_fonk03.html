@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Oklu fonksiyon kullanımı ES6</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	const ustAl =(taban, us)=>{  // function ustAl(taban, us)
+		let sonuc=1;
+		for(let i=1;i<=us;i++){
+			sonuc*=taban;
+		}
+		return sonuc;
+	}
+
+
+const hesapla =()=>{
+		tabandeger= document.getElementById("taban").value;
+		usdeger= document.getElementById("us").value;
+		let sonuc= ustAl(parseInt(tabandeger),parseInt(usdeger));
+		alert(sonuc);
+				
+	}
+</script>
+
+<form>
+	Taban: <input type="text" id="taban"> Üst:<input type="text" id="us">
+	<button onclick="hesapla()">Hesapla</button>
+</form>
+
+</body>
+</html>

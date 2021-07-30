@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patlama efekti</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  
+    <style>
+    #image {
+        width: 423px;
+        height: 282px;
+        margin: 1.5em auto;
+        background: url(https://lh5.googleusercontent.com/-oAhHdVnnyg4/T1MrcEW9ByI/AAAAAAAAA3o/-zTma1DolLk/s425/fonts-web-fonts-typography.jpg) no-repeat;
+        cursor: pointer;
+}
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+<!--    <script
+type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+-->
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+<div id="image"></div>
+
+
+    
+<script>
+var ImageExplosion = new function() {
+    var img = $('#image');
+    var imgWidth = img.width();
+    var imgHeight = img.height();
+    var yatayparca=3, dikeyparca=2;
+    var blockWidth = imgWidth / yatayparca;
+    var blockHeight = imgHeight / dikeyparca;
+    var bg = img.css('backgroundImage');
+    img.css('backgroundImage', 'none');
+
+    var blocks = function() {
+    var pos = '';
+        for (var i = 0; i < yatayparca*dikeyparca; i++) {
+            switch (i) {
+            case 0:
+                pos = '0px 0px';
+                break;
+            case 1:
+                pos = '-' + blockWidth + 'px 0px';
+                break;
+            case 2:
+                pos = '-' + (blockWidth * 2) + 'px -' + '0px';
+                break;
+            case 3:
+                pos = '0px -' + blockHeight + 'px';
+                break;
+            case 4:
+                pos = '-' + blockWidth + 'px -' + blockHeight + 'px';
+                break;
+            case 5:
+                pos = '-' + (blockWidth * 2) + 'px -' + blockHeight + 'px';
+                break;
+            default:
+                break;
+
+            }
+
+            $('<div class="image-block"/>').
+            css({
+                width: blockWidth,
+                height: blockHeight,
+                'float': 'left',
+                backgroundImage: bg,
+                backgroundPosition: pos
+            }).appendTo(img);
+
+        }
+
+    };
+
+    var explosion = function() {
+        var time = 0;
+        $('div.image-block', img).each(function() {
+            var $block = $(this);
+            $block.queue('explosion', function(next) {
+                $block.effect('explode', {
+                    pieces: 4
+                }, time, next);
+
+            });
+            $block.dequeue('explosion');
+            time += 400;
+        });
+
+    };
+
+    this.init = function() {
+        blocks();
+        img.bind('click', explosion);
+    };
+
+}();
+ImageExplosion.init();
+
+</script>
+</body>
+</html>

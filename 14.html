@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>While Örnek</title>
+	<script type="text/javascript">
+		
+		function yaz(){
+			alert("İşlem başladı");
+
+			var i=0;
+			var toplam=0;
+			while(true){
+				i++;
+				toplam+=i;
+				if (i==100) break;
+			}   
+			document.write(toplam);
+			alert("İşlem bitti");
+		}
+
+
+	</script>
+</head>
+<body>
+
+	<input type="button" onclick="yaz()" name="" value="Yaz">
+
+</body>
+</html>

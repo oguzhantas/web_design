@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Form Kontrolü</title>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Form Kontrolü</h3>
+            <form action="kaydet.php"  method="POST"  onsubmit = "return Kontrol();">
+                
+                <div class="form-group">
+                  <label>E-posta</label>
+                  <input type="text" class="form-control" id="eposta">
+                </div>
+
+                <div class="form-group">
+                  <label>Ortalama</label>
+                  <input type="text" class="form-control" id="ortalama">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Gönder</button>
+              </form>
+
+        </div>
+    </div>
+  </div>
+
+
+<script>
+
+function Kontrol(){
+    epostaSonuc=epostaKontrol('eposta');
+    aralikSonuc=aralikKontrol('ortalama',1,100);
+    //alert('e-posta Sonuc'+ epostaSonuc);
+    //alert('Aralik Sonuc'+aralikSonuc);
+    //Eğer iki sonuç da True ise sonuc True, aksi takdirde false olacak
+    return epostaSonuc&&aralikSonuc;
+}
+
+//Aralık Kontrolü
+function aralikKontrol(nesne, basla, bitis){
+
+    deger= document.getElementById(nesne).value;
+   
+    if ( !(deger>=basla && deger<=bitis)){
+          alert('Girilen değer aralık dışı,'+basla+"-"+bitis+" arası olmalıdır.");
+          return false;
+    }
+    return true;
+}
+
+
+//e-posta Kontrolü
+function epostaKontrol(nesne) {
+         deger= document.getElementById(nesne).value;
+        
+         pozisyon1 = deger.indexOf("@"); // @ işareti pozisyonu
+         pozisyon2 = deger.lastIndexOf("."); // nokta işareti pozisyonu
+         
+         if (pozisyon1 < 1 || ( pozisyon2 - pozisyon1 < 2 )) {
+            alert(" Lütfen geçerli bir e-posta adresi giriniz.")
+            return false;
+         }
+         return true;
+      }
+
+</script>
+
+</body>
+</html>

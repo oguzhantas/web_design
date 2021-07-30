@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	/* ES6 ile yeni gelen özelliklerden biri de array.find() metodu 
+	   aşağıdaki örnekte find()metodu dizinin ilk elemanını
+	   testFonksiyonunda bulup döndürüyor.
+	*/
+	var sayilar = [4, 9, 16, 25, 29];
+	var birinci = sayilar.find(testFonk);
+	console.log(birinci);
+
+	function testFonk(deger, indeks, dizi) {
+  		return deger>20;
+	}
+
+</script>
+</body>
+</html>

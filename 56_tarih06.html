@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Saat</p>
+
+<p id="sonuc"></p>
+
+<button onclick="clearInterval(degisken)">Durdur</button>
+
+<script>
+var degisken = setInterval(zamanGoster ,1000); 
+//1 saniyede bir zamanGoster fonksiyonu çağrılır.
+
+function zamanGoster() {
+  var d = new Date();
+  document.getElementById("sonuc").innerHTML = d.toLocaleTimeString();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonksiyon</title>
+    
+</head>
+<body>
+    
+    Sayı giriniz:<input type="text" id="sayi">
+    <button onclick="hesapla()">Hesapla</button>
+
+
+    <script>
+        function hesapla(){
+            n= document.getElementById("sayi").value;
+            sonuc= kareAl(parseInt(n));
+            //document.write("Kare alma sonucu:"+sonuc);
+            console.log(sonuc);
+            //alert("İşlem sonucu:"+sonuc);
+        }
+
+        //1. YOL
+        function kareAl(x){
+            return (x*x);
+        }
+
+        // 2.YOL
+        kareal = function(x){
+            return(x*x);
+        }
+    </script>
+</body>
+</html>

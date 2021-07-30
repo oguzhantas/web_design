@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random 2 (Rastgele)</title>
+</head>
+<body>
+
+
+    <script>
+        function uret(){
+            alt= document.getElementById("txtAltSinir").value;
+            ust= document.getElementById("txtUstSinir").value;
+
+            if(alt=="" || ust=="")
+            {
+                alert("Lütfen alt ve üst sınır değerini giriniz");
+                exit();
+            } else{
+                alt=Number(alt);
+                ust=Number(ust);
+            }           
+            aralik=ust-alt+1;
+            deger= Math.floor(Math.random()*(aralik))+alt;
+            document.getElementById("metin1").value=deger;
+        }
+       
+
+    </script>
+    
+    <pre>
+        Alt Sınır   :<input type="text" id="txtAltSinir"> <br>
+        Üst Sınır   :<input type="text" id="txtUstSinir"> <br><br>
+        
+        <button onclick="uret()">Sayı Üret</button><br>
+        <input type="text" id="metin1"><br>
+    </pre>
+   
+    
+
+</body>
+</html>

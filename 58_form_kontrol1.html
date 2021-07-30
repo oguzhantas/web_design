@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="kaydet.php" method="POST" onsubmit="return kontrol()">
+        Adı     : <input type="text" id="isim">
+        Soyadı  : <input type="text" id="soyisim">
+        <input type="submit" value="Kaydet">
+    </form>
+
+    <script>
+        function kontrol(){
+
+           const adi=document.getElementById("isim").value;
+           const soyadi=document.getElementById("soyisim").value;
+            if (adi==""  || soyadi=="")
+            {
+                alert("Adı ve Soyadı alanlarını doldurunuz");
+                return false; //Çok önemli, alanlar dolmamışsa form onaylanmayacak
+            }else{
+                alert('Alanlar dolduruldu');
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

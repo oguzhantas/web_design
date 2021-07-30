@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Div ile JS</title>
+	<meta charset="utf-8">
+	
+	<style type="text/css">
+		.kutu{
+			width: 200px;
+			height: 200px;
+			float:left;
+		}	
+
+		.kirmizi{
+			background-color: #d20000;
+		}
+
+		.mavi{
+			background-color: blue;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		function renkDegistir1(){
+
+			alert("Kutu rengi değişiyor");
+			document.getElementById("kutu1").style.background="#CCC";
+		}
+
+		function renkDegistir2(){
+
+			alert("Kutu rengi değişiyor");
+			document.getElementById("kutu2").style.background="#DDD";
+		}
+
+	</script>
+</head>
+<body>
+
+	<div class="kutu kirmizi" id="kutu1" onclick="renkDegistir1();">
+		Kırmızı
+	</div>
+
+	<div class="kutu mavi" id="kutu2" onclick="renkDegistir2();">
+		Mavi
+	</div>
+
+</body>
+</html>

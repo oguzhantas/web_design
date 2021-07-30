@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Opacitt</title>
+	 <meta charset="utf-8">
+	
+   <!-- CSS -->
+	<style type="text/css">
+		
+		.opakSinif {
+    		opacity:0.2;
+    		filter:alpha(opacity=20); /* Internet Explorer 8 ve öncesi için */
+		}
+
+		.koyuSinif{
+  			filter: brightness(30%);
+		}
+	</style>
+
+	<!-- JavaScript -->
+	 <script type="text/javascript">
+	 	function cssOpakEkle() {
+ 			 var element = document.getElementById("resim1");
+  			 element.classList.add("opakSinif");
+		}
+
+		
+		function cssOpakKaldir() { /* IE 9'da çalışmaz*/
+ 			 var element = document.getElementById("resim1");
+  			 element.classList.remove("opakSinif");
+		}
+	 	
+		//Bu kullanım tüm tarayıcılarda çalışır
+		function cssOpakKaldir2() { /* Tüm tarayıcılarda çalışır */
+ 			 var element = document.getElementById("resim1");
+  		  	element.className = element.className.replace(/\bopakSinif\b/g, "");
+		}
+
+		function cssKoyulukEkle() {
+ 			 var element = document.getElementById("resim1");
+  			 element.classList.add("koyuSinif");
+		}
+
+		function cssKoyulukKaldir() {
+ 			 var element = document.getElementById("resim1");
+  			 element.classList.remove("koyuSinif");
+		}
+	 </script>
+
+</head>
+<body>
+
+		
+
+
+	<img src="images/manzara.jpg" id="resim1" width="500" onmousemove="cssKoyulukEkle()" 
+	onmouseout="cssKoyulukKaldir()"><br>
+
+	<img src="images/manzara.jpg" id="resim2" width="500"><br>
+
+	<button onClick="cssOpakEkle()"> Opak Hale Getir</button>
+    <button onClick="cssOpakKaldir2()"> Opak Kaldır</button>
+    <button onClick="cssKoyulukEkle()"> Koyuluk Ekle</button>
+	<button onClick="cssKoyulukKaldir()"> Koyuluk Kaldir</button>
+
+
+</body>
+</html>

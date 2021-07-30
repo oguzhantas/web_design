@@ -1,0 +1,75 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<script type="text/javascript">
+	
+		function gizle(){
+		 	
+		 	var a1 = document.getElementById("alan1");
+		 	a1.style.display="none";
+
+			var a2 = document.getElementById("alan2");
+		 	a2.style.display="none";
+		}
+
+		function alan1Goster(){
+			var a1 = document.getElementById("alan1");
+		 	a1.style.display="block";
+
+		 	var a2 = document.getElementById("alan2");
+		 	a2.style.display="none";
+		}
+
+		function alan2Goster(){
+			var a2 = document.getElementById("alan2");
+		 	a2.style.display="block";
+
+		 	var a1 = document.getElementById("alan1");
+		 	a1.style.display="none";
+
+		}
+
+</script>
+
+
+
+
+</head>
+<body onload="gizle()">
+
+	<input type="button"  id="goster1" onclick="alan1Goster()" value="Kimlik Göster">
+	<input type="button"  id="goster2" onclick="alan2Goster()" value="Adres Göster">
+	<input type="button"  id="gizle" onclick="gizle()" value="Gizle">
+	
+	<div  id="alan1">
+		<form>
+			<table>
+				<tr>
+					<td>Adı:	</td>
+					<td><input type="text" name="adi" id="adi"></td>
+				</tr>
+				<tr>
+					<td>Soyadı:	</td>
+					<td><input type="text" name="soyadi" id="soyadi"></td>
+				</tr>
+			</table>
+				
+		</form>
+	</div>
+
+	<div  id="alan2">
+		<form>
+			<p>
+				Adres1	: <input type="text" name="adres1" id="adres1"><br>
+				Adres2	: <input type="text" name="adres2" id="adres2">	
+			</p>
+			
+		</form>
+	</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+window.onload = function() {
+    //sayfa açıldığı anda odaklanacak nesne 
+  document.getElementById("metin1").focus(); 
+};
+
+
+function calistir(event) {
+  var tus = event.keyCode;
+  if (tus == 38) {  //yukarı tuş
+        deger= parseInt(document.getElementById("metin1").value);
+        deger++;
+        document.getElementById("metin1").value=deger;
+  }
+
+  if (tus == 40) {  //aşağı tuş
+        deger= parseInt(document.getElementById("metin1").value);
+        deger--;
+        document.getElementById("metin1").value=deger;
+  }
+}
+
+
+    </script>
+    Yukarı ve aşağı ok tuşlarına basarak metin içindeki değeri artırıp azaltabilirsiniz.<br>
+    <input type="text" id="metin1" onkeydown="calistir(event)" value="0">
+</body>
+</html>

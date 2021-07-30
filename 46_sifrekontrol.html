@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Kontrol</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+
+        function formkontrol(){
+
+            adi= document.getElementById('ad').value;
+            sifre= document.getElementById('sifre').value;
+            tsifre= document.getElementById('tsifre').value;
+
+            var hata= new Array();
+            var sembol = '*|,:<>[]{}`;()@&$#%!+-"/';
+
+            var sembolvar=false;
+            for (var i = 0; i < sifre.length; i++) {
+                if (sembol.indexOf(sifre.charAt(i))!=-1){
+                    sembolvar=true;
+                }
+                }
+    
+
+            if(adi=="")
+                hata.push('Lütfen adı boş geçmeyiniz');
+            else if (adi.length<4)
+                hata.push('Lütfen adı alanını 3 karakterden büyük giriniz');
+            
+
+            if (sifre=='')
+                hata.push('Şifre alanını boş geçmeyiniz');
+            else{
+                if (sifre!=tsifre)
+                    hata.push('Şifreler aynı olmalıdır.');
+
+                else if (sifre.length<6)
+                    hata.push('Şifre 6 karekter veya daha büyük olmalıdır.');
+
+                else if (sifre.search(/[a-z]/) < 0)
+                        hata.push("Şifre en az bir Küçük harf içermelidir.");
+
+                   else if (sifre.search(/[A-Z]/) < 0)
+                        hata.push("Şifre en az bir Büyük harf içermelidir.");
+
+                else if (sifre.search(/[0-9]/) < 0)
+                    hata.push("Şifre en az bir rakam içermelidir.");
+
+                else if (sembolvar==false)
+                    hata.push("Şifre en az bir sembol içermelidir.");
+
+                
+            }
+
+         if (hata.length > 0) {
+                    alert(hata.join("\n"));
+                    return false;
+        }
+           else alert('Tamam şifre uygun'); //buraya return true diyebiliriz
+
+        }
+    </script>
+</head>
+<body>
+    <form id="kayitForm">
+    <table border="1" cellpadding="5" align="center">
+        <tr>
+            <td><label>Adı  :</label></td>
+            <td><input type="text" name="ad" id="ad"></td>
+        </tr>
+        <tr>
+         <td><label>Şifre:</label></td>
+         <td><input type="password" id="sifre" name="sifre"></td>
+
+        </tr>
+        <tr>
+         <td><label>Tekrar Şifre:</label></td>
+         <td><input type="password" id="tsifre" name="tsifre"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button"  onclick="formkontrol();" value="Kaydet">
+            </td>
+            
+        </tr>
+    </table>
+    </form>
+
+</body>
+</html>
